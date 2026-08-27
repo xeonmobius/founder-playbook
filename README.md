@@ -32,24 +32,41 @@ founder-playbook/
     └── founder-tracker.md       # per-product FOUNDER.md tracker (like MAKE.md)
 ```
 
-## Install — one line (recommended)
+## Install — one line (recommended: npx skills)
+
+**Easiest — `npx` (works for OpenCode, Claude Code, Cursor, Codex, 70+ agents via [skills.sh](https://skills.sh)):**
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/xeonmobius/founder-playbook/main/install.sh | bash
+npx skills add xeonmobius/founder-playbook -g -y
+# or for all agents at once:
+npx skills add xeonmobius/founder-playbook -g --all -y
 ```
-Installs to **both** `~/.config/opencode/skills/founder-playbook` and `~/.claude/skills/founder-playbook` (creates dirs if missing, `git pull` if exists, `--force` to re-clone). Then restart agent:
 
+Verify:
+```bash
+npx skills add xeonmobius/founder-playbook -l   # lists: founder-playbook
+npx skills list -g --json | grep founder-playbook
+```
+
+Then restart agent:
 ```
 /founder-playbook
 /founder-playbook design my distribution for Sakina (Muslim screen-time app)
 ```
 
-**Manual (if curl is blocked):**
+**No npx? Use curl:**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/xeonmobius/founder-playbook/main/install.sh | bash
+```
+Installs to **both** `~/.config/opencode/skills/founder-playbook` and `~/.claude/skills/founder-playbook` (creates dirs if missing, `git pull` if exists, `--force` to re-clone).
+
+**Manual:**
 
 ```bash
 git clone https://github.com/xeonmobius/founder-playbook.git ~/.config/opencode/skills/founder-playbook
 git clone https://github.com/xeonmobius/founder-playbook.git ~/.claude/skills/founder-playbook
-# update later: bash install.sh  (or install.sh --force to re-clone)
+# update later: bash install.sh  (or install.sh --force)
 ```
 
 Or just ask naturally: "how do I get first users", "help price my family app", "Product Hunt launch?".
