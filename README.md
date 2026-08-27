@@ -32,25 +32,24 @@ founder-playbook/
     └── founder-tracker.md       # per-product FOUNDER.md tracker (like MAKE.md)
 ```
 
-## Install
-
-**OpenCode:**
+## Install — one line (recommended)
 
 ```bash
-git clone https://github.com/xeonmobius/founder-playbook.git ~/.config/opencode/skills/founder-playbook
+curl -fsSL https://raw.githubusercontent.com/xeonmobius/founder-playbook/main/install.sh | bash
 ```
-
-**Claude Code:**
-
-```bash
-git clone https://github.com/xeonmobius/founder-playbook.git ~/.claude/skills/founder-playbook
-```
-
-Restart agent, then:
+Installs to **both** `~/.config/opencode/skills/founder-playbook` and `~/.claude/skills/founder-playbook` (creates dirs if missing, `git pull` if exists, `--force` to re-clone). Then restart agent:
 
 ```
 /founder-playbook
 /founder-playbook design my distribution for Sakina (Muslim screen-time app)
+```
+
+**Manual (if curl is blocked):**
+
+```bash
+git clone https://github.com/xeonmobius/founder-playbook.git ~/.config/opencode/skills/founder-playbook
+git clone https://github.com/xeonmobius/founder-playbook.git ~/.claude/skills/founder-playbook
+# update later: bash install.sh  (or install.sh --force to re-clone)
 ```
 
 Or just ask naturally: "how do I get first users", "help price my family app", "Product Hunt launch?".
