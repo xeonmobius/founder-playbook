@@ -1,0 +1,481 @@
+{
+  "generated_from": "data/master.jsonl 295 transcripts",
+  "total_distinct_tools": 86,
+  "categories": {
+    "AI Coding / Builders": [
+      {
+        "tool": "Cursor",
+        "mentions": 83
+      },
+      {
+        "tool": "Claude",
+        "mentions": 41
+      },
+      {
+        "tool": "ChatGPT",
+        "mentions": 35
+      },
+      {
+        "tool": "OpenAI",
+        "mentions": 34
+      },
+      {
+        "tool": "Lovable",
+        "mentions": 24
+      },
+      {
+        "tool": "Gemini",
+        "mentions": 19
+      },
+      {
+        "tool": "Claude Code",
+        "mentions": 12
+      },
+      {
+        "tool": "Bolt",
+        "mentions": 8
+      },
+      {
+        "tool": "Codex",
+        "mentions": 5
+      },
+      {
+        "tool": "Anthropic",
+        "mentions": 5
+      },
+      {
+        "tool": "Windsurf",
+        "mentions": 4
+      },
+      {
+        "tool": "Copilot",
+        "mentions": 3
+      },
+      {
+        "tool": "v0",
+        "mentions": 3
+      },
+      {
+        "tool": "GitHub Copilot",
+        "mentions": 2
+      }
+    ],
+    "Frontend & Mobile": [
+      {
+        "tool": "React",
+        "mentions": 40
+      },
+      {
+        "tool": "Swift",
+        "mentions": 25
+      },
+      {
+        "tool": "React Native",
+        "mentions": 14
+      },
+      {
+        "tool": "Next.js",
+        "mentions": 10
+      },
+      {
+        "tool": "Remix",
+        "mentions": 9
+      },
+      {
+        "tool": "Tailwind",
+        "mentions": 8
+      },
+      {
+        "tool": "Astro",
+        "mentions": 7
+      },
+      {
+        "tool": "Flutter",
+        "mentions": 4
+      }
+    ],
+    "Backend & Database": [
+      {
+        "tool": "Firebase",
+        "mentions": 15
+      },
+      {
+        "tool": "Postgres",
+        "mentions": 7
+      },
+      {
+        "tool": "PostgreSQL",
+        "mentions": 3
+      },
+      {
+        "tool": "Supabase",
+        "mentions": 3
+      },
+      {
+        "tool": "Neon",
+        "mentions": 2
+      },
+      {
+        "tool": "MongoDB",
+        "mentions": 2
+      }
+    ],
+    "Hosting & Infra": [
+      {
+        "tool": "AWS",
+        "mentions": 13
+      },
+      {
+        "tool": "Render",
+        "mentions": 6
+      },
+      {
+        "tool": "Vercel",
+        "mentions": 5
+      },
+      {
+        "tool": "Heroku",
+        "mentions": 5
+      },
+      {
+        "tool": "Railway",
+        "mentions": 4
+      },
+      {
+        "tool": "Cloudflare",
+        "mentions": 3
+      },
+      {
+        "tool": "Azure",
+        "mentions": 3
+      },
+      {
+        "tool": "Google Cloud",
+        "mentions": 3
+      },
+      {
+        "tool": "Netlify",
+        "mentions": 3
+      },
+      {
+        "tool": "GCP",
+        "mentions": 2
+      }
+    ],
+    "Analytics & Observability": [
+      {
+        "tool": "Clarity",
+        "mentions": 13
+      },
+      {
+        "tool": "Segment",
+        "mentions": 13
+      },
+      {
+        "tool": "Google Analytics",
+        "mentions": 10
+      },
+      {
+        "tool": "Mixpanel",
+        "mentions": 6
+      },
+      {
+        "tool": "Plausible",
+        "mentions": 5
+      },
+      {
+        "tool": "Sentry",
+        "mentions": 4
+      },
+      {
+        "tool": "Amplitude",
+        "mentions": 3
+      },
+      {
+        "tool": "PostHog",
+        "mentions": 2
+      }
+    ],
+    "Marketing & Distribution": [
+      {
+        "tool": "YouTube",
+        "mentions": 167
+      },
+      {
+        "tool": "Twitter",
+        "mentions": 152
+      },
+      {
+        "tool": "TikTok",
+        "mentions": 130
+      },
+      {
+        "tool": "Instagram",
+        "mentions": 123
+      },
+      {
+        "tool": "Reddit",
+        "mentions": 89
+      },
+      {
+        "tool": "Product Hunt",
+        "mentions": 14
+      },
+      {
+        "tool": "Buffer",
+        "mentions": 5
+      },
+      {
+        "tool": "Typefully",
+        "mentions": 2
+      }
+    ],
+    "Mobile Ecosystem": [
+      {
+        "tool": "App Store",
+        "mentions": 94
+      },
+      {
+        "tool": "Expo",
+        "mentions": 12
+      },
+      {
+        "tool": "Play Store",
+        "mentions": 10
+      }
+    ],
+    "Payments & Monetization": [
+      {
+        "tool": "Superwall",
+        "mentions": 61
+      },
+      {
+        "tool": "Stripe",
+        "mentions": 54
+      },
+      {
+        "tool": "RevenueCat",
+        "mentions": 17
+      },
+      {
+        "tool": "Polar",
+        "mentions": 4
+      },
+      {
+        "tool": "Gumroad",
+        "mentions": 3
+      },
+      {
+        "tool": "PayPal",
+        "mentions": 2
+      },
+      {
+        "tool": "Lemon Squeezy",
+        "mentions": 2
+      }
+    ],
+    "Design & Creative": [
+      {
+        "tool": "Figma",
+        "mentions": 46
+      },
+      {
+        "tool": "Canva",
+        "mentions": 12
+      },
+      {
+        "tool": "Framer",
+        "mentions": 11
+      },
+      {
+        "tool": "Sora",
+        "mentions": 5
+      }
+    ],
+    "Community & Comms": [
+      {
+        "tool": "Discord",
+        "mentions": 59
+      },
+      {
+        "tool": "Notion",
+        "mentions": 34
+      },
+      {
+        "tool": "Slack",
+        "mentions": 33
+      },
+      {
+        "tool": "Linear",
+        "mentions": 13
+      }
+    ],
+    "Email & Lifecycle": [
+      {
+        "tool": "Loops",
+        "mentions": 13
+      },
+      {
+        "tool": "Resend",
+        "mentions": 4
+      },
+      {
+        "tool": "Postmark",
+        "mentions": 3
+      },
+      {
+        "tool": "Mailgun",
+        "mentions": 2
+      },
+      {
+        "tool": "Brevo",
+        "mentions": 2
+      },
+      {
+        "tool": "Substack",
+        "mentions": 2
+      },
+      {
+        "tool": "ConvertKit",
+        "mentions": 2
+      }
+    ],
+    "Automation & No-code": [
+      {
+        "tool": "Bubble",
+        "mentions": 23
+      },
+      {
+        "tool": "Zapier",
+        "mentions": 13
+      },
+      {
+        "tool": "Webflow",
+        "mentions": 9
+      },
+      {
+        "tool": "n8n",
+        "mentions": 2
+      }
+    ],
+    "Auth": [
+      {
+        "tool": "Clerk",
+        "mentions": 4
+      }
+    ],
+    "AI Infra & Stores": [
+      {
+        "tool": "Perplexity",
+        "mentions": 3
+      },
+      {
+        "tool": "LangChain",
+        "mentions": 3
+      }
+    ]
+  },
+  "counts": {
+    "Claude": 41,
+    "Next.js": 10,
+    "PostgreSQL": 3,
+    "Cloudflare": 3,
+    "DigitalOcean": 1,
+    "Google Analytics": 10,
+    "Product Hunt": 14,
+    "Reddit": 89,
+    "YouTube": 167,
+    "Instagram": 123,
+    "App Store": 94,
+    "RevenueCat": 17,
+    "Twitter": 152,
+    "TikTok": 130,
+    "Cursor": 83,
+    "Expo": 12,
+    "Remix": 9,
+    "Stripe": 54,
+    "ChatGPT": 35,
+    "React Native": 14,
+    "React": 40,
+    "Supabase": 3,
+    "Claude Code": 12,
+    "Firebase": 15,
+    "Superwall": 61,
+    "Mixpanel": 6,
+    "OpenAI": 34,
+    "Codex": 5,
+    "Framer": 11,
+    "Slack": 33,
+    "Swift": 25,
+    "Vercel": 5,
+    "Mailgun": 2,
+    "AWS": 13,
+    "Linear": 13,
+    "SwiftUI": 1,
+    "Railway": 4,
+    "Notion": 34,
+    "Loops": 13,
+    "Figma": 46,
+    "Lovable": 24,
+    "Neon": 2,
+    "Webflow": 9,
+    "Discord": 59,
+    "Typefully": 2,
+    "Replit": 1,
+    "Resend": 4,
+    "Bubble": 23,
+    "PostHog": 2,
+    "Clarity": 13,
+    "Zapier": 13,
+    "Prisma": 1,
+    "Postgres": 7,
+    "Redis": 1,
+    "Auth0": 1,
+    "Play Store": 10,
+    "Anthropic": 5,
+    "Flutter": 4,
+    "OneSignal": 1,
+    "Buffer": 5,
+    "Copilot": 3,
+    "GitHub Copilot": 2,
+    "GCP": 2,
+    "GA4": 1,
+    "PayPal": 2,
+    "MongoDB": 2,
+    "Azure": 3,
+    "Postmark": 3,
+    "Firestore": 1,
+    "Tailwind": 8,
+    "Gumroad": 3,
+    "Segment": 13,
+    "Gemini": 19,
+    "Sentry": 4,
+    "Plausible": 5,
+    "Canva": 12,
+    "Heroku": 5,
+    "Sora": 5,
+    "Clerk": 4,
+    "Polar": 4,
+    "Lemon Squeezy": 2,
+    "Amplitude": 3,
+    "Google Cloud": 3,
+    "Bolt": 8,
+    "Astro": 7,
+    "Render": 6,
+    "Perplexity": 3,
+    "Netlify": 3,
+    "LangChain": 3,
+    "PlanetScale": 1,
+    "Airtable": 1,
+    "v0": 3,
+    "Kotlin": 1,
+    "Brevo": 2,
+    "Windsurf": 4,
+    "n8n": 2,
+    "Substack": 2,
+    "GPT-4": 1,
+    "Make.com": 1,
+    "ConvertKit": 2,
+    "Paddle": 1
+  }
+}

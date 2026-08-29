@@ -2,7 +2,7 @@
 name: founder-playbook
 description: Turn 295 StarterStory/Superwall/StarterStoryBuild transcripts into actionable product & distribution plans. Use when you want to validate an idea, design distribution, price/monetize, or ask "how did X founder get first users?" — grounded in real transcripts at data/master.jsonl + data/*/transcripts/*.md, modeled on /make-playbook (Idea→Build→Launch→Grow→Monetize→Automate→Exit) but evidence-backed. Trigger on "distribution", "how do i get users", "product idea", "pricing", or /founder-playbook.
 user-invocable: true
-references: references/ethos.md, references/idea.md, references/build.md, references/launch.md, references/distribution.md, references/monetize.md, references/automate.md, references/exit.md
+references: references/ethos.md, references/idea.md, references/build.md, references/launch.md, references/distribution.md, references/monetize.md, references/automate.md, references/exit.md, references/tech-stack.md
 templates: templates/founder-tracker.md
 scripts: scripts/query_transcripts.py
 ---
@@ -15,6 +15,7 @@ Modeled on `/make-playbook` (Pieter Levels' *MAKE* framework: Idea→Build→Lau
 
 - **Evidence on demand:** any distribution/pricing/build claim is cross-checked against 3-5 real founder transcripts (with `video_id` + timestamp citations) via `scripts/query_transcripts.py`
 - **Distribution-first:** `references/distribution.md` is a dedicated Grow-stage playbook distilled from 241 launch + 235 ads + 152 twitter + 134 tiktok + 93 reddit + 80 SEO + 23 cold-email transcripts — ask "design my distribution for X" and get a channel-ranked plan with founder quotes
+- **Tech by use case:** `references/tech-stack.md` (86 tools across 12 categories from 295 transcripts) + `data/tech_inventory.json` — ask "I need auth / payments / analytics — what did founders use?" and get ranked picks with `query_transcripts.py --tech "Stripe"`
 - **Same tracker discipline:** `templates/founder-tracker.md` → `FOUNDER.md` (like `MAKE.md`) so next session picks up where you left off
 
 ## Workflow
@@ -23,7 +24,7 @@ Modeled on `/make-playbook` (Pieter Levels' *MAKE* framework: Idea→Build→Lau
 
 2. **Load ethos + relevant stage file(s).** Always `references/ethos.md` first (bootstrapping-first, no fake followers/bots/data-selling). Then the stage file(s) — usually one, but load adjacent on boundaries (e.g. "should I charge?" → build/launch/monetize).
 
-3. **Query transcripts for evidence.** Run `uv run python scripts/query_transcripts.py "<your question>" --top 5` (or `--channel starterstory`) to pull verbatim founder snippets. Surface 2-3 quotes with `video_id` + `[start]` timestamps — never invent tactics without a citation.
+3. **Query transcripts for evidence.** Run `uv run python scripts/query_transcripts.py "<your question>" --top 5` (or `--channel starterstory`) to pull verbatim founder snippets. For tools: `query_transcripts.py --tech "Cursor"` or `--inventory` for the 86-tool summary. Surface 2-3 quotes with `video_id` + `[start]` timestamps — never invent tactics without a citation.
 
 4. **Apply to *your* product — don't just restate.** Turn the checklist + transcript evidence into a concrete, numbered 7-day action list for *this* product, this niche, this week.
 
@@ -41,6 +42,7 @@ Modeled on `/make-playbook` (Pieter Levels' *MAKE* framework: Idea→Build→Lau
 | Stuck on stack/tools or outsourcing before shipping | Build | `references/build.md` | `query_transcripts.py "built in 3 days with AI"` |
 | Built but nobody knows it exists | Launch | `references/launch.md` | `query_transcripts.py "Product Hunt launch"` |
 | Users plateaued or only when ads run | Distribution/Grow | `references/distribution.md` | `query_transcripts.py "distribution reddit SEO"` |
+| "I need a tool and didn't know it existed for this use case" | Tech Stack | `references/tech-stack.md` | `query_transcripts.py --tech "Stripe"` or `--inventory` |
 | Users but no revenue / pricing feels off | Monetize | `references/monetize.md` | `query_transcripts.py "pricing $30k/month"` |
 | Revenue but founder is bottleneck | Automate | `references/automate.md` | `query_transcripts.py "automate support"` |
 | Considering acquisition | Exit | `references/exit.md` | `query_transcripts.py "sold my app"` |

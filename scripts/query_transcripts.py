@@ -44,15 +44,43 @@ def score(text, terms):
     return s
 
 def main():
-    ap=argparse.ArgumentParser(description="Query 295 transcripts")
-    ap.add_argument("query", nargs="+", help="search terms, e.g. \"reddit SEO\"")
+    ap=argparse.ArgumentParser(description="Query 295 transcripts — also tech stack: --tech \"Stripe\"")
+    ap.add_argument("query", nargs="*", help="search terms, e.g. \"reddit SEO\" (or use --tech for exact tool)")
+    ap.add_argument("--tech", default=None, help="exact tool name, e.g. \"Stripe\", \"Cursor\", \"Supabase\" — word-boundary match, use with --top")
     ap.add_argument("--top", type=int, default=5, help="top N results")
     ap.add_argument("--channel", default=None, help="filter channel: starterstory / superwallhq / starterstorybuild")
     ap.add_argument("--raw", action="store_true", help="print raw jsonl entries")
     ap.add_argument("--data", default=None, help="path to master.jsonl")
+    ap.add_argument("--inventory", action="store_true", help="show tech inventory summary (12 categories, 86 tools)")
     args=ap.parse_args()
-    q=" ".join(args.query)
-    terms=re.split(r"\s+", q.strip())
+    if args.inventory:
+        inv_candidates = [
+            pathlib.Path(__file__).resolve().parents[1] / "data" / "tech_inventory.json",
+            pathlib.Path(__file__).resolve().parents[1] / "references" / "tech_inventory.json",
+            pathlib.Path("/Users/shannonchowdhury/.config/opencode/skills/founder-playbook/data/tech_inventory.json"),
+            pathlib.Path("/Users/shannonchowdhury/.config/opencode/skills/founder-playbook/references/tech_inventory.json"),
+        ]
+        for p in inv_candidates:
+            if p.exists():
+                import json as _js
+                data=_js.loads(open(p).read())
+                print(f"Tech inventory from {p}: {data.get('total_distinct_tools')} tools in {len(data.get('categories',{}))} categories")
+                for cat, tools in data.get("categories",{}).items():
+                    line=", ".join([f"{t['tool']} ({t['mentions']})" for t in tools[:5]])
+                    print(f"  {cat}: {line}")
+                return
+        print("No tech_inventory.json found next to skill — see references/tech-stack.md")
+        return
+    if args.tech:
+        q=args.tech
+        terms=[q]
+        # word-boundary exact match will be used in scoring below
+    else:
+        if not args.query:
+            ap.print_help()
+            return
+        q=" ".join(args.query)
+        terms=re.split(r"\s+", q.strip())
     master = pathlib.Path(args.data) if args.data else find_data()
     entries=load_entries(master)
     if args.channel:
@@ -63,7 +91,11 @@ def main():
         # also scan timestamped version if present
         if e.get("transcript_ts"):
             txt += " " + " ".join([s.get("text","") for s in e["transcript_ts"]][:200])
-        s=score(txt, terms)
+        if args.tech:
+            # exact tool: word-boundary or multi-word exact
+            s=1 if re.search(r'\b' + re.escape(args.tech.lower()) + r'\b', txt.lower()) else 0
+        else:
+            s=score(txt, terms)
         if s>0:
             scored.append((s,e))
     scored.sort(key=lambda x: x[0], reverse=True)
